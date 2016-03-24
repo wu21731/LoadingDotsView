@@ -6,4 +6,6 @@ a user-defined view for loading or viewPager's indicator
 此控件可以自定义加载的小圆点的数量，间距，默认半径，默认颜色，指示颜色，颜色切换频率，半径浮动大小等。
 没图说个结巴，看下面的效果图：
 
-![lscreenshot](dots.gif)
+![screenshot](dots.gif)
+
+效果图的效果没有真机上看的效果好，见谅。
