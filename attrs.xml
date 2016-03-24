@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingDotsView">
+        <!-- 豆子的数量 -->
+        <attr name="dot_count" format="integer"/>
+        <!-- 豆子的间距 -->
+        <attr name="dot_spacing" format="dimension"/>
+        <!-- 豆子的半径 -->
+        <attr name="dot_radius" format="dimension"/>
+        <!-- 豆子的选中颜色 -->
+        <attr name="dot_select_color" format="color"/>
+        <!-- 豆子的默认颜色 -->
+        <attr name="dot_default_color" format="color"/>
+        <!-- 豆子的颜色切换时间 -->
+        <attr name="switch_duration" format="integer"/>
+        <!-- 豆子浮动的大小 -->
+        <attr name="dot_radius_float" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundCornerImageView">
+        <attr name="corner_radius" format="dimension"/>
+    </declare-styleable>
+</resources>
