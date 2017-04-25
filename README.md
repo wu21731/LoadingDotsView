@@ -2,8 +2,8 @@
 a user-defined view for loading or viewPager's indicator
 
     自定义的一个加载等待的控件，也可以做为viewPager的指示器，自己一个练手的自定义控件。
-    添加了一个新的实现方法，直接自定义View，代替继承LinearLayout添加子控件的方法，效果一样，实现的效率和代码更好。
-    此控件可以自定义加载的小圆点的数量，间距，默认半径，默认颜色，指示颜色，颜色切换频率，半径浮动大小等。
+    请使用最新的DynamicLoadingView，更好的实现方式，更优化的代码。
+    此控件可以自定义加载的小圆点的数量，间距，默认半径，默认颜色，指示颜色，颜色切换频率，半径浮动大小等。
 没图说个结巴，看下面的效果图：
 
 ![screenshot](dots.gif)
@@ -15,21 +15,15 @@ a user-defined view for loading or viewPager's indicator
 ```java
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="LoadingDotsView">
-        <!-- 豆子的数量 -->
-        <attr name="dot_count" format="integer"/>
-        <!-- 豆子的间距 -->
-        <attr name="dot_spacing" format="dimension"/>
-        <!-- 豆子的半径 -->
-        <attr name="dot_radius" format="dimension"/>
-        <!-- 豆子的选中颜色 -->
-        <attr name="dot_select_color" format="color"/>
-        <!-- 豆子的默认颜色 -->
-        <attr name="dot_default_color" format="color"/>
-        <!-- 豆子的颜色切换时间 -->
-        <attr name="switch_duration" format="integer"/>
-        <!-- 豆子浮动的大小 -->
-        <attr name="dot_radius_float" format="dimension"/>
+     <declare-styleable name="DynamicLoadingView">
+        <attr name="count_number" format="integer"/><!--点的个数-->
+        <attr name="item_spacing" format="dimension"/><!--点的间距-->
+        <attr name="item_radius" format="dimension"/><!--点的半径-->
+        <attr name="item_float_radius" format="dimension"/><!--点的半径浮动-->
+        <attr name="item_default_color" format="color"/><!--点的默认颜色-->
+        <attr name="item_change_color" format="color"/><!--点的选中颜色-->
+        <attr name="item_auto_play" format="boolean"/><!--是否自动切换-->
+        <attr name="item_play_delay" format="integer"/><!--悬停时间-->
     </declare-styleable>
 
     <declare-styleable name="RoundCornerImageView">
@@ -40,18 +34,19 @@ a user-defined view for loading or viewPager's indicator
 
 在布局文件中使用的方法如下：
 ```java
-<com.***.LoadingDotsView
+<com.***.DynamicLoadingView
+        android:id="@+id/indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        app:dot_count="9"
-        app:dot_radius="4dp"
-        app:dot_default_color="#ff0000"
-        app:dot_select_color="#00ff00"
-        app:switch_duration="500"
-        app:dot_spacing="10dp"
-        app:dot_radius_float="2dp"/>
+        app:item_auto_play="true"
+        app:item_change_color="@color/colorAccent"
+        app:item_default_color="@color/colorPrimary"
+        app:item_float_radius="@dimen/dp1"
+        app:item_radius="@dimen/dp3"
+        app:count_number="20"
+        app:item_play_delay="2000"
+        android:background="@color/color_88ffffff"
+        app:item_spacing="@dimen/dp6"/>
 ```
 
 本屌是混迹在`鸿洋`大神的`玩 Android 2群 423372824`的一个小透明，正在努力学习coding中……
